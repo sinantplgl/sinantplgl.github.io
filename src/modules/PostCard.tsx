@@ -17,7 +17,7 @@ export default class PostCard extends Component<PostCardProps>{
             <div className="card blog-horizontal">
                 <div className="card-header">
                     <h5 className="card-title font-weight-semibold">
-                        <Link to={`/${this.props.post.id}`} className="text-default">{this.props.post.title}</Link>
+                        <Link to={`/${this.props.post.url_slug}`} className="text-default">{this.props.post.title}</Link>
                     </h5>
                 </div>
 
@@ -27,7 +27,7 @@ export default class PostCard extends Component<PostCardProps>{
                     </div>
 
                     <p>{this.props.post.description}</p>
-                    <Link to={`/${this.props.post.id}`}>Show more...</Link>
+                    <Link to={`/${this.props.post.url_slug}`}>Show more...</Link>
                 </div>
 
                 <div className="card-footer bg-transparent d-sm-flex justify-content-sm-between align-items-sm-center border-top-0 pt-0 pb-3">

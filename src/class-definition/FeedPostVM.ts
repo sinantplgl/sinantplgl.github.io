@@ -1,6 +1,7 @@
 export interface FeedPostVMParams {
     id: number
     title: string;
+    url_slug: string;
     banner_pic: string;
     description: string;
     user: any;
@@ -12,6 +13,7 @@ export interface FeedPostVMParams {
 export class FeedPostVM {
     id: number
     title: string;
+    url_slug: string;
     banner_pic: string;
     description: string;
     user: any;
@@ -22,6 +24,7 @@ export class FeedPostVM {
     constructor(params: FeedPostVMParams) {
         this.id = params.id
         this.title = params.title;
+        this.url_slug = params.url_slug;
         this.banner_pic = params.banner_pic
         this.description = params.description
         this.user = params.user
