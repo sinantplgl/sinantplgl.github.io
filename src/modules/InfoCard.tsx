@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import NavigationItem from './NavigationItem';
 
-export default class InfoCard extends Component {
+interface IInfoCardProps {
+    path: string
+}
+
+export default class InfoCard extends Component<IInfoCardProps> {
+    constructor(props: IInfoCardProps) {
+        super(props);
+    }
     render() {
         return (
             // Left sidebar component
@@ -12,7 +19,7 @@ export default class InfoCard extends Component {
 
                     {/* Navigation */}
                     <div className="card">
-                        <div className="card-body bg-indigo-400 text-center card-img-top" style={{ backgroundImage: "url(global_assets/images/backgrounds/panel_bg.png)", backgroundSize: "contain"}}>
+                        <div className="card-body bg-indigo-400 text-center card-img-top" style={{ backgroundImage: "url(global_assets/images/backgrounds/panel_bg.png)", backgroundSize: "contain" }}>
                             <div className="card-img-actions d-inline-block mb-3">
                                 <img className="img-fluid rounded-circle" src="global_assets/images/my-pic.jpeg" width="170" height="170" alt=""></img>
                             </div>
@@ -29,8 +36,8 @@ export default class InfoCard extends Component {
 
                         <div className="card-body p-0">
                             <ul className="nav nav-sidebar mb-2" data-bind="foreach: tabs">
-                                <NavigationItem iconClass="icon-quill4" itemText="Blog"/>
-                                <NavigationItem iconClass="icon-user" itemText="About Me"/>
+                                <NavigationItem iconClass="icon-quill4" itemText="Blog" isActive={this.props.path == '/'} />
+                                <NavigationItem iconClass="icon-user" itemText="About Me" isActive={this.props.path == '/about'} />
                             </ul>
                         </div>
                     </div>
